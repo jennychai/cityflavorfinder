@@ -1,0 +1,34 @@
+<!-- extend from base layout -->
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>  Discover what food people are talking about </h2>
+<form name=form1 action= "{{ url_for('find') }}" method="POST">
+ I am from
+ <select name = "homecity">
+ <option value = "Cambridge"> Cambridge </option>
+ <option value = "Berkeley"> Berkeley </option>
+ <option value = "Austin"> Austin </option>
+ <option value = "Atlanta"> Atlanta </option>
+ <option value = "New York"> New York </option>
+ </select>
+ I am going to 
+ <select name = "visitcity">
+ <option value = "Cambridge"> Cambridge </option>
+ <option value = "Berkeley"> Berkeley </option>
+ <option value = "Austin"> Austin </option>
+ <option value = "New York"> New York </option>
+ <option value = "Atlanta"> Atlanta </option>
+ </select>
+ <!-- <center>I am from  <input type="text" name="homecity" placeholder = "Atlanta">
+ <center>I am going to  <input type="text" name="visitcity" placeholder = "New York">
+ -->
+ <input name="index" type="hidden" value=0>     </center>
+
+<br>
+<br>
+<center> <input type="submit"  value="Find me food">
+</center>
+</form>
+</body>
+{% endblock %}

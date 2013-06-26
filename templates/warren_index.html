@@ -1,0 +1,22 @@
+<head> <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+<body>
+<p>sdfk</P>
+<P>sldjfksjd</p>
+<button id = "foo_button"> click me!</button>
+<input id="username" placeholder = "enter your name"></input>
+</body>
+</script>
+</head>
+
+
+<script>
+$document.ready(function(){
+  console.log("JQUERY is RUNNING")
+
+  $("#footutton).click(function(){
+    username = $("#username").val();  //# is for id $ is for jQuery
+    $.getJSON("/text.json?query="+username,function(data){
+      $("p").html(data["text"]);
+      $("p.styleme").css("color","#aa00aa");
+   }
+});

@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block content %}
+ <style>
+body {color:white;}
+body {background-color:yellow;}
+h3 {color:red;}
+h4 {color:white;}
+h5 {color:white;}
+p.ex {color:rgb(0,0,255);}
+</style>
+
+                <meta charset="utf-8">
+                <title>D3 Test</title>
+                <script type="text/javascript" src="../static/js/d3.v3.js"></script>
+                <style type="text/css">
+
+                        .chart div {
+                                   font: 10px sans-serif;
+                                   background-color: steelblue;
+                                   text-align: right;
+                                   padding: 3px;
+                                   margin: 1px;
+                                   color: white;
+                        }
+
+
+                </style>
+   <center> <h2>Here are the top food to try when you are in {{visitcity}} </h2> </center>
+    <center>  <I>(most different from your home city)</I>  </center>
+    <br>
+    <br>
+    <div class ="container">
+      <div class ="row">
+        <div class = "span1">
+        </div>
+        <div class = "span11">
+        {% for l in wordlist %} 
+           <div class = "row" >
+    	     <div class ="span3"> 
+	      <a href={{l[2]}} target="_blank"> 
+                 <img src="./static/img/{{visitcity}}/{{l[0]}}.jpg" alt="" width = "300" height = "100">
+		 <h1> &nbsp </h1> 
+	      </div>
+	     <div class ="span4">
+		 <h1> &nbsp </h1> 
+	         <h4>{{l[0]}} at <I>{{l[1]}} </I></h4></a>
+		<font size = "6" color="red">{{l[3]}}</font> times more popular in {{visitcity}}</h5>
+	     </div>
+	      <br>
+	</div>
+        {% endfor %}
+       </div>
+     </div>
+   </div>
+{% endblock %}
+

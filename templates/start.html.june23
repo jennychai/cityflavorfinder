@@ -1,0 +1,17 @@
+<!-- extend from base layout -->
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>  Discover ...  Taste!</h2>
+<form name=form1 action= "{{ url_for('find') }}" method="POST">
+ <center>I am from  <input type="text" name="homecity" placeholder = "Atlanta">
+ <center>I am going to  <input type="text" name="visitcity" placeholder = "New York">
+ <input name="index" type="hidden" value=0>     </center>
+
+<br>
+<br>
+<center> <input type="submit"  value="Find me food">
+</center>
+</form>
+</body>
+{% endblock %}

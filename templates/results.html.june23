@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+ <style>
+body {color:white;}
+h3 {color:white;}
+p.ex {color:rgb(0,0,255);}
+</style>
+
+   <center> <h2>Here are the top food to try when you are in {{visitcity}} </h2> </center>
+    <center>  <I>(most different from your home city)</I>  </center>
+    {% for l in wordlist %}
+    <center> <h3> {{l[0]}} </h3> at <I><a href={{l[2]}} target="_blank"> {{l[1]}}</a> </I> </center>
+    
+    <!-- <center> <h3> {{l}} </h3> </center>
+    -->
+    {% endfor %}
+{% endblock %}
+

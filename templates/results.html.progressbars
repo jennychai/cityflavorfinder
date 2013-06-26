@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+ <style>
+body {color:black;}
+h3 {color:black;}
+h4 {color:black;}
+h5 {color:black;}
+p.ex {color:rgb(0,0,255);}
+</style>
+
+                <meta charset="utf-8">
+                <title>D3 Test</title>
+                <script type="text/javascript" src="../static/js/d3.v3.js"></script>
+                <style type="text/css">
+
+                        .chart div {
+                                   font: 10px sans-serif;
+                                   background-color: steelblue;
+                                   text-align: right;
+                                   padding: 3px;
+                                   margin: 1px;
+                                   color: white;
+                        }
+
+
+                </style>
+   <center> <h2>Here are the top food to try when you are in {{visitcity}} </h2> </center>
+    <center>  <I>(most different from your home city)</I>  </center>
+    <br>
+    <br>
+    <div class ="container">
+      <div class ="row">
+        <div class = "span1">
+        </div>
+        <div class = "span11">
+        {% for l in wordlist %} 
+           <div class = "row">
+    	     <div class ="span4">
+	      <a href={{l[2]}} target="_blank"> 
+              <img src="./static/img/{{visitcity}}/{{l[0]}}.jpg" alt="" width = "300" height = "100"> <h4>{{l[0]}} </h4> <h5>at <I>{{l[1]}} </I>({{l[3]}} times more popular in {{visitcity}})</h5> 
+              </a>
+	      <br>
+           </div>
+ <div class = "span2">
+ <div class="progress progress-danger">
+  <div class="bar" style="width: {{l[3]}}%;"></div>
+</div>
+ <div class="progress progress-warning">
+  <div class="bar" style="width: 1%;"></div>
+</div>
+</div>
+          </div>
+        {% endfor %}
+       </div>
+     </div>
+   </div>
+{% endblock %}
+
