@@ -49,11 +49,6 @@ p.ex {color:rgb(0,0,255);}
 	      <br>
 	</div>
         {% endfor %}
-<form name="input" action="{{ url_for('showmore') }}" method="post">
-  <input type="hidden" name = "homecity" value = {{homecity}} >
-  <input type="hidden" name = "visitcity" value = {{visitcity}} >
-  <input type="submit" value="Show me more">
-</form>
        </div>
      </div>
    </div>

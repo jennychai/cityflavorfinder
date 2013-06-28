@@ -25,7 +25,7 @@ p.ex {color:rgb(0,0,255);}
 
 
                 </style>
-   <center> <h2>Here are the top food to try when you are in {{visitcity}} </h2> </center>
+   <center> <h2>Here are more food to try when you are in {{visitcity}} </h2> </center>
     <center>  <I>(most different from your home city)</I>  </center>
     <br>
     <br>
@@ -49,11 +49,6 @@ p.ex {color:rgb(0,0,255);}
 	      <br>
 	</div>
         {% endfor %}
-<form name="input" action="{{ url_for('showmore') }}" method="post">
-  <input type="hidden" name = "homecity" value = {{homecity}} >
-  <input type="hidden" name = "visitcity" value = {{visitcity}} >
-  <input type="submit" value="Show me more">
-</form>
        </div>
      </div>
    </div>
